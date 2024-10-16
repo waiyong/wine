@@ -26,8 +26,10 @@ jobs:
           echo "## MODEL METRICS" > report.md
           cat metrics.txt >> report.md
 
-          echo "## Data Viz" >> report.md
-          cml comment create feature_importance.png >> report.md
-          cml comment create residuals.png >report.md
-
-          cmd comment create report.md
+          
+          # Add images to the report
+          echo "![Feature Importance](feature_importance.png)" >> report.md
+          echo "![Residuals](residuals.png)" >> report.md
+          
+          # Create a comment with the report using CML
+          cml comment report.md
