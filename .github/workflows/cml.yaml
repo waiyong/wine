@@ -30,4 +30,4 @@ jobs:
           cml comment create feature_importance.png >> report.md
           cml comment create residuals.png >report.md
 
-          cmd-send-comment report.md
+          cmd comment create report.md
